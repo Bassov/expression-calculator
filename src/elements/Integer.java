@@ -8,16 +8,22 @@ public class Integer extends Primary {
         this.value = parseInteger(value);
     }
 
-    private static int parseInteger(String op) {
+    private static int parseInteger(String str) {
         int i = 0;
         int num = 0;
+        boolean isNeg = false;
 
-        while(i < op.length()) {
-            num *= 10;
-            num += op.charAt(i++) - '0'; //Minus the ASCII code of '0' to get the value of the charAt(i++).
+        if (str.charAt(0) == '-') {
+            isNeg = true;
+            i = 1;
         }
 
-        return num;
+        while( i < str.length()) {
+            num *= 10;
+            num += str.charAt(i++) - '0'; //Minus the ASCII code of '0' to get the value of the charAt(i++).
+        }
+
+        return isNeg ? -num : num;
     }
 
     @Override

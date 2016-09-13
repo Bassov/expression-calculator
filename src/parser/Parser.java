@@ -73,7 +73,7 @@ public class Parser {
 
     private Expression parsePrimary() {
         Expression result = null;
-        if (input.peek().matches("\\d+")) {
+        if (input.peek().matches("-\\d+|\\d+")) {
             result = new Integer(input.pop());
         } else if (input.peek().equals("(")) {
             input.pop(); // to pop "("
