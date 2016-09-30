@@ -25,7 +25,7 @@ public class Tokenizer {
     }
 
     private static LinkedList<String> splitString(String input) {
-        Pattern p = Pattern.compile("-\\d+|\\d+|[-+*()]|xor|or|and|<=|>=|/=|[<>=/]");
+        Pattern p = Pattern.compile("\\d+|[-+*()]|xor|or|and|<=|>=|/=|[<>=/]");
         Matcher m = p.matcher(input);
 
         LinkedList<String> result = new LinkedList<>();
